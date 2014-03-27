@@ -23,9 +23,7 @@ exports.lista = function(req, res){
 };
 
 exports.grava = function(req, res) {
-	var contato = new Contato;
-	contato.nome = req.body.nome;
-	contato.email = req.body.email;
+	var contato = new Contato(req.body);
 	contato.save(function(error, contato) {
 		if(error) next(error);
 

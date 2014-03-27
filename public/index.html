@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt" ng-app="cto">
+<head>
+	<meta charset="UTF-8">
+	<title>Contatos</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+</head>
+<body class="container" ng-controller="ContatosController">
+	<h1 class="text-center">Contatos</h1>
+	<div>
+		<label>Filtro</label><input type="search" ng-model="filtro.texto">
+		<table class="table table-hover">
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Ação</th>
+			</tr>
+			<tr ng-repeat="contato in contatos | filter: filtro.texto">
+				<td>
+					<a href="#" ng-click="seleciona(contato)">{{contato.nome}}</a>
+				</td>
+				<td>{{contato.email}}</td>
+				<td><button ng-click="remove(contato)" class="btn btn-warning">Remove</button></td>
+			</tr>
+		</table>
+		<form ng-submit="grava(contato)">
+			<div class="form-group">
+				<label>Nome</label>
+				<input required type="text" class="form-control" ng-model="contato.nome">
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				<input requited type="email" class="form-control" ng-model="contato.email">
+			</div>			
+			<button class="btn btn-primary">Grava</button>
+			<p>Você clicou {{total}} veze(s)</p>
+		</form>
+	</div>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

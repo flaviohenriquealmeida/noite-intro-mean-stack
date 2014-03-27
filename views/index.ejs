@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method="POST" action="contatos">
+		Nome: <input type="text" name="nome"/>
+		Email: <input type="text" name="email"/>
+		<input type="submit" value="Gravar"/>
+	
+		<ul>
+		<% for(var i = 0; contatos.length; i++) { %>
+			<li>contatos[i].nome</li>	
+		<% } %>
+		</ul>
+    </form>
+  </body>
+</html>

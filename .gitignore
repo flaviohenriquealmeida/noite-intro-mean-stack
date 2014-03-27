@@ -1,18 +1,7 @@
-# Object files
-*.o
-*.ko
+# OS generated files #
+#######################
 
-# Libraries
-*.lib
-*.a
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
+.DS_Store
+.DS_Store?
+node_modules/
+public/bower_components
